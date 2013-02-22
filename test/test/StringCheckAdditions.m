@@ -8,6 +8,7 @@
 
 #import "StringCheckAdditions.h"
 #import <objc/runtime.h>
+#import "LocalizationChecker.h"
 
 static Method originalMethod;
 
@@ -25,26 +26,35 @@ static Method originalMethod;
 
    //put in dict key
     
-    NSString* returned = [self swappedLocalizedStringForKey:key value:value table:tableName];
+    NSString* translated = [self swappedLocalizedStringForKey:key value:value table:tableName];
     
     
     BOOL defaultSupplied = (value != nil) && value.length > 0;
-    BOOL keyIsSameAsReturned = (key == returned);
     
-    if ((!defaultSupplied && [returned isEqualToString:key] )
-        ||
-        (defaultSupplied && [returned isEqualToString:value])) {
-
-        //we don't have the string localized
-        NSLog(@"*****NO STRING IS LOCALIZED********");
-#warning WHEN VALUE EXISTS AND IS THE SAME AS KEY, WE FAIL TO RECOGNIZE GOOD STRING
-        
-    } else {
-        //string localized, add to structure
+    if (!defaultSupplied) {
+        value = @"__MYHACK_DEFAULTVAULE__";
     }
     
     
-    return returned;
+    BOOL keyIsSameAsReturned = (key == translated);
+    
+    if ((!defaultSupplied && [translated isEqualToString:key] && keyIsSameAsReturned)
+        ||
+        (defaultSupplied && [translated isEqualToString:value])) {
+
+        //we don't have the string localized
+        NSLog(@"*****NO STRING IS LOCALIZED********");
+        
+    } else {
+        //string localized, add to structure
+        
+        
+        [[LocalizationChecker sharedLocalizationChecker] addLocalizedWord:translated];
+        
+    }
+    
+    
+    return translated;
     
 }
 

@@ -24,9 +24,9 @@
     UILabel* label = [UILabel new];
 
     
-//    label.text = NSLocalizedString(@"mytitles", @"");
+    label.text = NSLocalizedString(@"mytitles", @"");
     
-//    label.text = NSLocalizedString(@"nottranslated", @"");
+    label.text = NSLocalizedString(@"nottranslated", @"");
     label.text = NSLocalizedString(@"translated", @"");
     
     
