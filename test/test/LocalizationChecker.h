@@ -13,10 +13,9 @@
 
 // This is the singleton that will handle the data structure.
 
-@property (strong, nonatomic) NSMutableDictionary *localizedWords;
-
 +(LocalizationChecker *)sharedLocalizationChecker;
 
 -(BOOL)isStringLocalized:(NSString *)theString;
+-(void)addLocalizedWord:(NSString *)theString;
 
 @end

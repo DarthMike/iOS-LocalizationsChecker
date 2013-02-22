@@ -7,6 +7,7 @@
 //
 
 #import "UILabel+LocalizationChecker.h"
+#import "LocalizationChecker.h"
 #import <objc/runtime.h>
 
 @implementation UILabel (LocalizationChecker)
@@ -26,14 +27,15 @@
     method_exchangeImplementations(originalMethod, mine);
 }
 
-
 - (void)swappedSetText:(NSString *)text {
-#warning TODO
     
+    if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:text] == NO) {
         [self setBackgroundColor:[UIColor redColor]];
+    }
     
     [self swappedSetText:text];
 }
+
 
 
 @end

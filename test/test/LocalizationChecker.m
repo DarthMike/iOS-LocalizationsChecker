@@ -8,6 +8,11 @@
 
 #import "LocalizationChecker.h"
 
+@interface LocalizationChecker ()
+@property (strong, nonatomic) NSMutableDictionary *localizedWords;
+@end
+
+
 @implementation LocalizationChecker
 
     static LocalizationChecker *sharedInstance;
@@ -49,6 +54,11 @@
     }
     
     return result;
+}
+
+-(void)addLocalizedWord:(NSString *)theString
+{
+    [self.localizedWords setObject:[NSNull nil] forKey:theString];
 }
 
 @end
