@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "StringCheckAdditions.h"
+#import "NSBundle+LocalizationChecker.h"
 #import "ViewController.h"
 
 @implementation AppDelegate

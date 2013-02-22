@@ -10,13 +10,6 @@
 #import "LocalizationChecker.h"
 #import <objc/runtime.h>
 
-//@interface UILabel ()
-//@property (nonatomic, strong) UIColor *originalBackgroundColor;
-//@end
-//
-//@implementation UILabel
-//@synthesize originalBackgroundColor;
-//@end
 
 @implementation UILabel (LocalizationChecker)
 
@@ -46,7 +39,8 @@
     if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:text] == NO) {
         [self setBackgroundColor:[UIColor redColor]];
     } else {
-//        [self setBackgroundColor:self.originalBackgroundColor];
+        id oldColor = objc_getAssociatedObject(self, "hackaton");
+        [self setBackgroundColor:oldColor];
     }
     
     [self swappedSetText:text];
@@ -59,7 +53,7 @@
         [self swappedAwakeFromNib];
         
         if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:self.text] == NO) {
-//            self.originalBackgroundColor = self.backgroundColor;
+            objc_setAssociatedObject(self, "hackaton", self.backgroundColor, OBJC_ASSOCIATION_RETAIN);
             [self setBackgroundColor:[UIColor redColor]];
         }
     }
