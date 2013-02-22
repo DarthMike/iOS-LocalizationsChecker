@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Miquel Angel Quinones Garcia. All rights reserved.
 //
 
-#import "StringCheckAdditions.h"
+#import "NSBundle+LocalizationChecker.h"
 #import <objc/runtime.h>
 #import "LocalizationChecker.h"
 
 static Method originalMethod;
 
 
-@implementation NSBundle (StringCheckAdditions)
+@implementation NSBundle (LocalizationChecker)
 + (void) initialize {
     if (self == [NSBundle class]) {
         originalMethod = class_getInstanceMethod(self, @selector(localizedStringForKey:value:table:));

@@ -1,5 +1,5 @@
 //
-//  StringCheckAdditions.h
+//  NSBundle+LocalizationChecker.h
 //  test
 //
 //  Created by Miquel Angel Quinones Garcia on 2/22/13.
@@ -8,5 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSBundle (StringCheckAdditions)
+@interface NSBundle (LocalizationChecker)
 @end
