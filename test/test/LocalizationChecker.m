@@ -48,7 +48,12 @@
 {
     BOOL result = NO;
     
-    if ([self.localizedWords objectForKey:theString] || theString.length == 0)
+    //Trims decimal and punctuation character set to be able to not consider strings only composed of numbers (not translated)
+    NSCharacterSet* punctuation = [NSCharacterSet punctuationCharacterSet];
+    NSCharacterSet* decimal = [NSCharacterSet decimalDigitCharacterSet];
+    NSString* filtered = [[theString stringByTrimmingCharactersInSet:punctuation] stringByTrimmingCharactersInSet:decimal];
+    
+    if ([self.localizedWords objectForKey:theString] || filtered.length == 0)
     {
         result = YES;
     }
