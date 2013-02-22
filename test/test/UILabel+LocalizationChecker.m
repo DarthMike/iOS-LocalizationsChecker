@@ -42,6 +42,9 @@ static const char *kIsFaultyKey = "IsFaulty";
     if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:text] == NO) {
     objc_setAssociatedObject(self, kIsFaultyKey, @YES, OBJC_ASSOCIATION_RETAIN);
         [self setBackgroundColorImpl:[UIColor redColor]];
+    } else {
+        id oldColor = objc_getAssociatedObject(self, "hackaton");
+        [self setBackgroundColor:oldColor];
     }
     
     [self swappedSetText:text];
@@ -54,7 +57,8 @@ static const char *kIsFaultyKey = "IsFaulty";
         [self swappedAwakeFromNib];
         
         if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:self.text] == NO) {
-            [self setBackgroundColorImpl:[UIColor redColor]];
+            objc_setAssociatedObject(self, "hackaton", self.backgroundColor, OBJC_ASSOCIATION_RETAIN);
+            [self setBackgroundColor:[UIColor redColor]];
         }
     }
 }
