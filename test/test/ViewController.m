@@ -19,9 +19,9 @@
 {
     [super viewDidLoad];
 
-    self.coolLabel.text = @"hello";
-
-    [LocalizationChecker sharedLocalizationChecker];
+    self.coolLabel.backgroundColor = [UIColor greenColor];
+    self.coolLabel.text = NSLocalizedString(@"fdsklhhljkdgslhjkadgs", @"");
+    self.coolLabel.backgroundColor = [UIColor greenColor];
 }
 
 @end

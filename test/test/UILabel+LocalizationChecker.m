@@ -9,6 +9,9 @@
 #import "UILabel+LocalizationChecker.h"
 #import "LocalizationChecker.h"
 #import <objc/runtime.h>
+#import <QuartzCore/QuartzCore.h>
+
+static const char *kIsFaultyKey = "IsFaulty";
 
 @implementation UILabel (LocalizationChecker)
 
@@ -28,14 +31,26 @@
 }
 
 - (void)swappedSetText:(NSString *)text {
+    objc_setAssociatedObject(self, kIsFaultyKey, @NO, OBJC_ASSOCIATION_RETAIN);
     
     if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:text] == NO) {
-        [self setBackgroundColor:[UIColor redColor]];
+    objc_setAssociatedObject(self, kIsFaultyKey, @YES, OBJC_ASSOCIATION_RETAIN);
+        [self setBackgroundColorImpl:[UIColor redColor]];
     }
     
     [self swappedSetText:text];
 }
 
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
+    
+    id r =  objc_getAssociatedObject(self, kIsFaultyKey);
+    BOOL isFaulty = [r boolValue];
+    if (!isFaulty) {
+        [self setBackgroundColorImpl:backgroundColor];
+    }
+}
 
-
+- (void)setBackgroundColorImpl:(UIColor *)backgroundColor {
+     self.layer.backgroundColor = backgroundColor.CGColor;
+}
 @end
