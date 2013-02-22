@@ -43,7 +43,7 @@ static Method originalMethod;
         (defaultSupplied && [translated isEqualToString:value])) {
 
         //we don't have the string localized
-        NSLog(@"*****NO STRING IS LOCALIZED********");
+//        NSLog(@"*****NO STRING IS LOCALIZED********");
         
     } else {
         //string localized, add to structure
