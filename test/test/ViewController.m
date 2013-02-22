@@ -23,7 +23,7 @@
 - (void)setupLocalizedStrings
 {
     self.coolLabel.backgroundColor = [UIColor greenColor];
-    self.coolLabel.text = NSLocalizedString(@"fdsklhhljkdgslhjkadgs", @"");
+    self.coolLabel.text = NSLocalizedString(@"0.0",@"");;
     self.coolLabel.backgroundColor = [UIColor greenColor];
     
 

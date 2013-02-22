@@ -38,6 +38,7 @@ static Method originalMethod;
         value = @"__MYHACK_DEFAULTVAULE__";
     }
     
+    //Need to see if returned string is pointing to same string as returned, because there was no string in disk
     BOOL keyIsSameAsReturned = (key == translated);
     
     if ((!defaultSupplied && [translated isEqualToString:key] && keyIsSameAsReturned)
@@ -45,7 +46,8 @@ static Method originalMethod;
         (defaultSupplied && [translated isEqualToString:value])) {
 
         //We don't have the string localized
-        NSLog(@"*****NO STRING IS LOCALIZED********");
+        //NSLog(@"*****NO STRING IS LOCALIZED********");
+        //Just as a reference. 
     } else {
         //String localized, add to structure
         //This will be checked later on when a string is set to a UI component
