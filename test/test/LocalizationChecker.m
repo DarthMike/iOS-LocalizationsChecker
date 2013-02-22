@@ -48,10 +48,23 @@
 {
     BOOL result = NO;
     
-    //Trims decimal and punctuation character set to be able to not consider strings only composed of numbers (not translated)
-    NSCharacterSet* punctuation = [NSCharacterSet punctuationCharacterSet];
-    NSCharacterSet* decimal = [NSCharacterSet decimalDigitCharacterSet];
-    NSString* filtered = [[theString stringByTrimmingCharactersInSet:punctuation] stringByTrimmingCharactersInSet:decimal];
+    NSString* filtered = theString;
+    NSRange punctuation;
+    do{
+        punctuation = [filtered rangeOfCharacterFromSet:[NSCharacterSet punctuationCharacterSet]];
+        if (punctuation.location != NSNotFound) {
+            filtered = [filtered stringByReplacingCharactersInRange:punctuation withString:@""];
+        }
+        
+    }while (punctuation.location != NSNotFound && filtered);
+    
+    NSRange decimal;
+    do{
+        decimal = [filtered rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]];
+        if (decimal.location != NSNotFound) {
+            filtered = [filtered stringByReplacingCharactersInRange:decimal withString:@""];
+        }
+    }while (decimal.location != NSNotFound && filtered);
     
     if ([self.localizedWords objectForKey:theString] || filtered.length == 0)
     {
