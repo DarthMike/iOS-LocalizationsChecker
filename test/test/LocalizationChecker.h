@@ -2,8 +2,7 @@
 //  LocalizationChecker.h
 //  test
 //
-//  Created by Hector Zarate on 2/22/13.
-//  Copyright (c) 2013 Miquel Angel Quinones Garcia. All rights reserved.
+//  Created by Hector Zarate / Tomasz Wyszomirski on 2/22/13.
 //
 
 #import <Foundation/Foundation.h>
