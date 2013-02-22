@@ -39,7 +39,7 @@ static const char *kIsFaultyKey = "IsFaulty";
 - (void)swappedSetText:(NSString *)text {
     objc_setAssociatedObject(self, kIsFaultyKey, @NO, OBJC_ASSOCIATION_RETAIN);
     
-    if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:text] == NO) {
+    if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:text] == NO && text.length) {
     objc_setAssociatedObject(self, kIsFaultyKey, @YES, OBJC_ASSOCIATION_RETAIN);
         [self setBackgroundColorImpl:[UIColor redColor]];
     } else {
