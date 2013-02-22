@@ -10,8 +10,14 @@
 
 @implementation LocalizationChecker
 
+    static LocalizationChecker *sharedInstance;
+
 -(id)init
 {
+    if (sharedInstance != nil) {
+        return sharedInstance;
+    }
+    
     self = [super init];
     
     if (self)
@@ -20,6 +26,17 @@
     }
     
     return self;
+}
+
++(LocalizationChecker *)sharedLocalizationChecker
+{
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[[self class] alloc] init];
+    });
+    
+    return sharedInstance;
 }
 
 -(BOOL)isStringLocalized:(NSString *)theString

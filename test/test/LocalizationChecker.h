@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) NSMutableDictionary *localizedWords;
 
++(LocalizationChecker *)sharedLocalizationChecker;
+
 -(BOOL)isStringLocalized:(NSString *)theString;
 
 @end
