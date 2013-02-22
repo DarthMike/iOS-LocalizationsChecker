@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "LocalizationChecker.h"
 
 @interface ViewController ()
 
@@ -17,7 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    self.coolLabel.text = @"hello";
+
+    [LocalizationChecker sharedLocalizationChecker];
 }
 
 @end

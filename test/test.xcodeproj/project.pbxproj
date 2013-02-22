@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A91AE1116D7FBCE00FD5088 /* LocalizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A91AE1016D7FBCE00FD5088 /* LocalizationChecker.m */; };
+		3A91AE1416D7FD5F00FD5088 /* UILabel+LocalizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A91AE1316D7FD5F00FD5088 /* UILabel+LocalizationChecker.m */; };
 		E7F8ED6916D7C45900DC1DE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F8ED6816D7C45800DC1DE3 /* UIKit.framework */; };
 		E7F8ED6B16D7C45900DC1DE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F8ED6A16D7C45900DC1DE3 /* Foundation.framework */; };
 		E7F8ED6D16D7C45900DC1DE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F8ED6C16D7C45900DC1DE3 /* CoreGraphics.framework */; };
@@ -23,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A91AE0F16D7FBCE00FD5088 /* LocalizationChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationChecker.h; sourceTree = "<group>"; };
+		3A91AE1016D7FBCE00FD5088 /* LocalizationChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationChecker.m; sourceTree = "<group>"; };
+		3A91AE1216D7FD5F00FD5088 /* UILabel+LocalizationChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LocalizationChecker.h"; sourceTree = "<group>"; };
+		3A91AE1316D7FD5F00FD5088 /* UILabel+LocalizationChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LocalizationChecker.m"; sourceTree = "<group>"; };
 		E7F8ED6516D7C45800DC1DE3 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F8ED6816D7C45800DC1DE3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7F8ED6A16D7C45900DC1DE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,6 +102,10 @@
 				E7F8ED6F16D7C45900DC1DE3 /* Supporting Files */,
 				E7F8ED8B16D7C86400DC1DE3 /* StringCheckAdditions.h */,
 				E7F8ED8C16D7C86400DC1DE3 /* StringCheckAdditions.m */,
+				3A91AE0F16D7FBCE00FD5088 /* LocalizationChecker.h */,
+				3A91AE1016D7FBCE00FD5088 /* LocalizationChecker.m */,
+				3A91AE1216D7FD5F00FD5088 /* UILabel+LocalizationChecker.h */,
+				3A91AE1316D7FD5F00FD5088 /* UILabel+LocalizationChecker.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -186,6 +196,8 @@
 				E7F8ED7916D7C45900DC1DE3 /* AppDelegate.m in Sources */,
 				E7F8ED8216D7C45900DC1DE3 /* ViewController.m in Sources */,
 				E7F8ED8D16D7C86400DC1DE3 /* StringCheckAdditions.m in Sources */,
+				3A91AE1116D7FBCE00FD5088 /* LocalizationChecker.m in Sources */,
+				3A91AE1416D7FD5F00FD5088 /* UILabel+LocalizationChecker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
