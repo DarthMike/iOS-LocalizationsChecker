@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "LocalizationChecker.h"
 
 @interface ViewController ()
 
@@ -19,7 +20,8 @@
     [super viewDidLoad];
 
     self.coolLabel.text = @"hello";
-//    [self.coolLabel setText:@"hi"];
+
+    [LocalizationChecker sharedLocalizationChecker];
 }
 
 @end
