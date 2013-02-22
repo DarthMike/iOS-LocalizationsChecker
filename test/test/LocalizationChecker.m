@@ -48,7 +48,7 @@
 {
     BOOL result = NO;
     
-    if ([self.localizedWords objectForKey:theString])
+    if ([self.localizedWords objectForKey:theString] || theString.length == 0)
     {
         result = YES;
     }
