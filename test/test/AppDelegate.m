@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "StringCheckAdditions.h"
 #import "ViewController.h"
 
 @implementation AppDelegate
@@ -19,6 +19,17 @@
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    
+    UILabel* label = [UILabel new];
+
+    
+//    label.text = NSLocalizedString(@"mytitles", @"");
+    
+//    label.text = NSLocalizedString(@"nottranslated", @"");
+    label.text = NSLocalizedString(@"translated", @"");
+    
+    
     
 
     return YES;

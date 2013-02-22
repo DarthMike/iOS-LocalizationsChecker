@@ -19,6 +19,7 @@
 		E7F8ED8216D7C45900DC1DE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8ED8116D7C45900DC1DE3 /* ViewController.m */; };
 		E7F8ED8516D7C45900DC1DE3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7F8ED8316D7C45900DC1DE3 /* ViewController.xib */; };
 		E7F8ED8D16D7C86400DC1DE3 /* StringCheckAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8ED8C16D7C86400DC1DE3 /* StringCheckAdditions.m */; };
+		E7FA264216D7FDA40033FAE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7FA264116D7FDA40033FAE3 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E7F8ED8416D7C45900DC1DE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		E7F8ED8B16D7C86400DC1DE3 /* StringCheckAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringCheckAdditions.h; sourceTree = "<group>"; };
 		E7F8ED8C16D7C86400DC1DE3 /* StringCheckAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringCheckAdditions.m; sourceTree = "<group>"; };
+		E7FA264116D7FDA40033FAE3 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		E7F8ED6F16D7C45900DC1DE3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E7FA264116D7FDA40033FAE3 /* Localizable.strings */,
 				E7F8ED7016D7C45900DC1DE3 /* test-Info.plist */,
 				E7F8ED7116D7C45900DC1DE3 /* InfoPlist.strings */,
 				E7F8ED7416D7C45900DC1DE3 /* main.m */,
@@ -168,6 +171,7 @@
 				E7F8ED7D16D7C45900DC1DE3 /* Default@2x.png in Resources */,
 				E7F8ED7F16D7C45900DC1DE3 /* Default-568h@2x.png in Resources */,
 				E7F8ED8516D7C45900DC1DE3 /* ViewController.xib in Resources */,
+				E7FA264216D7FDA40033FAE3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +308,7 @@
 				E7F8ED8A16D7C45900DC1DE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

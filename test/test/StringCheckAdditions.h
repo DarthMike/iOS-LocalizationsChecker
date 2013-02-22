@@ -8,5 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
-@interface StringCheckAdditions : NSBundle
+@interface NSBundle (StringCheckAdditions)
 @end
