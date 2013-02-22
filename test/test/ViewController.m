@@ -22,7 +22,11 @@
     self.coolLabel.text = NSLocalizedString(@"fdsklhhljkdgslhjkadgs", @"");
     self.coolLabel.backgroundColor = [UIColor greenColor];
     
+
     self.coolLabel.hidden = YES;
+
+    self.title = @"test";
+
 }
 
 @end

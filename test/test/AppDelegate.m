@@ -18,8 +18,13 @@
     [LocalizationChecker sharedLocalizationChecker].showsFaultyWhenViewHidden = YES;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] init];
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    
+    self.window.rootViewController = navigationController;
+    [navigationController pushViewController:self.viewController animated:NO];
+    
     [self.window makeKeyAndVisible];
     
     return YES;
