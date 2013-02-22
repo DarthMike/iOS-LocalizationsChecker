@@ -58,7 +58,7 @@
 
 -(void)addLocalizedWord:(NSString *)theString
 {
-    [self.localizedWords setObject:[NSNull nil] forKey:theString];
+    [self.localizedWords setObject:[NSNull null] forKey:theString];
 }
 
 @end
