@@ -41,6 +41,8 @@ static const char *kIsFaultyKey = "IsFaulty";
     
     if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:text] == NO) {
         objc_setAssociatedObject(self, kIsFaultyKey, @YES, OBJC_ASSOCIATION_RETAIN);
+        NSLog(@"Non-localized string \"%@\" in: %@", text, [[self class] methodNameFromStackTrace]);
+        
         [self setBackgroundColorImpl:[UIColor redColor]];
     } else {
         id oldColor = objc_getAssociatedObject(self, "hackaton");
@@ -67,7 +69,7 @@ static const char *kIsFaultyKey = "IsFaulty";
     id r =  objc_getAssociatedObject(self, kIsFaultyKey);
     BOOL isFaulty = [r boolValue];
     if (isFaulty) {
-        NSLog(@"Non-localized string in: %@", [[self class] methodNameFromStackTrace]);
+        //do some logging?
     } else {
         [self setBackgroundColorImpl:backgroundColor];
     }
