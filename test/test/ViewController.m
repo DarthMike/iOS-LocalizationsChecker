@@ -17,7 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupLocalizedStrings];
+}
 
+- (void)setupLocalizedStrings
+{
     self.coolLabel.backgroundColor = [UIColor greenColor];
     self.coolLabel.text = NSLocalizedString(@"fdsklhhljkdgslhjkadgs", @"");
     self.coolLabel.backgroundColor = [UIColor greenColor];

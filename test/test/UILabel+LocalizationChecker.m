@@ -66,7 +66,9 @@ static const char *kIsFaultyKey = "IsFaulty";
     
     id r =  objc_getAssociatedObject(self, kIsFaultyKey);
     BOOL isFaulty = [r boolValue];
-    if (!isFaulty) {
+    if (isFaulty) {
+        NSLog(@"Non-localized string in: %@", [[self class] methodNameFromStackTrace]);
+    } else {
         [self setBackgroundColorImpl:backgroundColor];
     }
 }
@@ -80,4 +82,19 @@ static const char *kIsFaultyKey = "IsFaulty";
 - (void)setBackgroundColorImpl:(UIColor *)backgroundColor {
     self.layer.backgroundColor = backgroundColor.CGColor;
 }
+
++ (NSString *)methodNameFromStackTrace {
+    NSArray *stackTrace = [NSThread callStackSymbols];
+    if (stackTrace.count <= 2) {
+        return nil;
+    }
+    NSString *stackLine = stackTrace[2];
+    stackLine = [stackLine stringByReplacingOccurrencesOfString:@" +" withString:@" "
+                                                        options:NSRegularExpressionSearch
+                                                          range:NSMakeRange(0, stackLine.length)];
+    NSArray *stackComponents = [stackLine componentsSeparatedByString:@" "];
+    stackComponents = [stackComponents subarrayWithRange:NSMakeRange(3, 2)];
+    return [stackComponents componentsJoinedByString:@" "];
+}
+
 @end
