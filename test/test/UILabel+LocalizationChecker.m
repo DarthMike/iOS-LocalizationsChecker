@@ -71,6 +71,12 @@ static const char *kIsFaultyKey = "IsFaulty";
     }
 }
 
+- (void)setHidden:(BOOL)hidden {
+    if (![LocalizationChecker sharedLocalizationChecker].showsFaultyWhenViewHidden) {
+        self.layer.hidden = hidden;
+    }
+}
+
 - (void)setBackgroundColorImpl:(UIColor *)backgroundColor {
      self.layer.backgroundColor = backgroundColor.CGColor;
 }

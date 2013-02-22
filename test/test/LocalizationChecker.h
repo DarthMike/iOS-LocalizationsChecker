@@ -18,4 +18,9 @@
 -(BOOL)isStringLocalized:(NSString *)theString;
 -(void)addLocalizedWord:(NSString *)theString;
 
+
+//This is a configuration value, to check if the view should be shown highlighted when a string is not localized
+//Default is NO
+@property (nonatomic, assign) BOOL showsFaultyWhenViewHidden;
+
 @end

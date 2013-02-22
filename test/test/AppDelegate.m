@@ -7,13 +7,15 @@
 //
 
 #import "AppDelegate.h"
-#import "NSBundle+LocalizationChecker.h"
+#import "LocalizationChecker.h"
 #import "ViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [LocalizationChecker sharedLocalizationChecker].showsFaultyWhenViewHidden = YES;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
