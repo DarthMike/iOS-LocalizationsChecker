@@ -12,35 +12,36 @@ When you write an iOS app, you need some things for localized strings to show in
 This breaks. **A LOT**. When sources, UI, strings, wireframes, and requirements change, in multiplatform projects. 
 When a string is not found, system replaces with default language one, or with programmer-supplied default.
 
-We want to ease the pain of finding where you forgot to add your strings.
+**We want to ease the pain of finding where you forgot to add your strings.**
 
 ##Usage
-Just add the 'checker' files to your project compile phase. All else will work automatically! 
+1. Add the 'checker' files to your project compile phase. 
+1. Enjoy! It will work automatically! ;)
 
-The library will monitor calls to load strings from NSBundle, and all text setters in your UI. If there is a mismatch between them, it means string is hardcoded, or there was no translation! 
+The library will monitor calls to load strings from NSBundle, and all text setters in your UI. If there is a mismatch between them, it means string is hardcoded, or there was no translation! This is achieved through Objective-C's coolest dynamic features: categories, object introspection, method sizzling and so. Fancy, uh?
 
 ##Result
-This is how your UI will look with the library in your code working, for **ALL** the UI:
+1. While running your application, the framework will highlight in red **ALL** it's UI texts that are not localized. This is how it looks:
 
 ![](sample.png)
 
-Also where strings were not translated, a log is thrown into console.
+1. It will also display in console a list of the strings missing localization.
 
-##Development and first implementation idea:
-This component was developed initially as a 4 hour fast hacking for [Name Collision Hackaton](http://www.namecollision.pl).
-
-Write a small component which can be added to any iOS App, allowing:
-
-- Change UI component at runtime with color or different background showing that string is not localized.
-- Generate a log file (or just log to console) where a text was set and not localized, which view, which component, what string.
-- Ideas can be added to this, to ease on debugging that kind of problem...
-
-###How it's solved:
-- Method swizzling to catch when app talks with string loading API
-- Catch when user modifies any text UI component property
-- All using Objective-C dynamism (categories, method swizzling, object introspection) to achieve the goal
-
-##Further work
+##Future Work:
 - Could customize a set of strings (for example km/h), which are not translated
 - Could check other things, like text doesn't fit the label frame.
 - Could generate a full report telling you which class/code files loaded strings without localization.
+ 
+##Contribution:
+- Feel free to fork the repository and play with it. And don't be shy! We would love to include some neat push requests of yours!
+- If you detect any bug or nasty behaviour, raise an issue! We want to put some effort into this to be a usable tool for you.
+
+##Developers:
+
+- Miguel Quinones
+- Pawel Wrzosek
+- Tomek Wyszomirski
+- Hector Zarate
+
+This component was first developed as a 4 hour fast hacking for the [Name Collision Hackaton](http://www.namecollision.pl). 
+Original objectives and motivation [here](https://www.hackerleague.org/hackathons/name-collision/hacks/ios-localizations-checker).
