@@ -24,7 +24,7 @@ This is how your UI will look with the library in your code working, for **ALL**
 
 ![](sample.png)
 
-Also wher strings were not translated, a log is thrown into console.
+Also where strings were not translated, a log is thrown into console.
 
 ##Development and first implementation idea:
 This component was developed initially as a 4 hour fast hacking for [Name Collision Hackaton](http://www.namecollision.pl).
