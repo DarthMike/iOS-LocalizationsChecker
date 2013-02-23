@@ -2,8 +2,7 @@
 //  AppDelegate.m
 //  test
 //
-//  Created by Miquel Angel Quinones Garcia on 2/22/13.
-//  Copyright (c) 2013 Miquel Angel Quinones Garcia. All rights reserved.
+//  Created by Miquel Angel Quinones Garcia / Paweł Wrzosek on 2/22/13.
 //
 
 #import "AppDelegate.h"
