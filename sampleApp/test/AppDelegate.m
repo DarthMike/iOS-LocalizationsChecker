@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LocalizationChecker.h"
+#import "HKLocalizationChecker.h"
 #import "ViewController.h"
 
 @implementation AppDelegate
@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [LocalizationChecker sharedLocalizationChecker].showsFaultyWhenViewHidden = YES;
+    [HKLocalizationChecker sharedHKLocalizationChecker].showsFaultyWhenViewHidden = YES;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     

@@ -1,15 +1,15 @@
 //
-//  UINavigationBar+LocalisationChecker.m
+//  UINavigationBar+HKLocalizationChecker.m
 //  test
 //
 //  Created by Hector Zarate / Tomasz Wyszomirski on 2/22/13.
 //
 
-#import "UIViewController+LocalisationChecker.h"
+#import "UIViewController+HKLocalizationChecker.h"
 #import <objc/runtime.h>
-#import "LocalizationChecker.h"
+#import "HKLocalizationChecker.h"
 
-@implementation UIViewController (LocalisationChecker)
+@implementation UIViewController (HKLocalizationChecker)
 
 + (void) initialize {
     if (self == [UIViewController class]) {
@@ -26,7 +26,7 @@
 }
 
 - (void)swappedSetTitle:(NSString *)title {
-    if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:title] == NO) {
+    if ([[HKLocalizationChecker sharedHKLocalizationChecker] isStringLocalized:title] == NO) {
         objc_setAssociatedObject(self, "hackaton", self.navigationController.navigationBar, OBJC_ASSOCIATION_RETAIN);
         self.navigationController.navigationBar.tintColor = [UIColor redColor];
         NSLog(@"Non-localized string \"%@\" in: %@", title, [[self class] methodNameFromStackTrace]);

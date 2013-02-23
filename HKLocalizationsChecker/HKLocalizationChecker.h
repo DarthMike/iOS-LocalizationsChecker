@@ -1,5 +1,5 @@
 //
-//  LocalizationChecker.h
+//  HKLocalizationChecker.h
 //  test
 //
 //  Created by Hector Zarate / Tomasz Wyszomirski on 2/22/13.
@@ -7,12 +7,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LocalizationChecker : NSObject
+@interface HKLocalizationChecker : NSObject
 
 
 // This is the singleton that will handle the data structure.
 
-+(LocalizationChecker *)sharedLocalizationChecker;
++(HKLocalizationChecker *)sharedHKLocalizationChecker;
 
 -(BOOL)isStringLocalized:(NSString *)theString;
 -(void)addLocalizedWord:(NSString *)theString;

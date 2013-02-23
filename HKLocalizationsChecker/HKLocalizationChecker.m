@@ -1,20 +1,20 @@
 //
-//  LocalizationChecker.m
+//  HKLocalizationChecker.m
 //  test
 //
 //  Created by Hector Zarate / Tomasz Wyszomirski on 2/22/13.
 //
 
-#import "LocalizationChecker.h"
+#import "HKLocalizationChecker.h"
 
-@interface LocalizationChecker ()
+@interface HKLocalizationChecker ()
 @property (strong, nonatomic) NSMutableDictionary *localizedWords;
 @end
 
 
-@implementation LocalizationChecker
+@implementation HKLocalizationChecker
 
-    static LocalizationChecker *sharedInstance;
+    static HKLocalizationChecker *sharedInstance;
 
 -(id)init
 {
@@ -32,7 +32,7 @@
     return self;
 }
 
-+(LocalizationChecker *)sharedLocalizationChecker
++(HKLocalizationChecker *)sharedHKLocalizationChecker
 {
     static dispatch_once_t onceToken;
     

@@ -1,18 +1,18 @@
 //
-//  NSBundle+LocalizationChecker.m
+//  NSBundle+HKLocalizationChecker.m
 //  test
 //
 //  Created by Miquel Angel Quinones Garcia / Paweł Wrzosek on 2/22/13.
 //
 
-#import "NSBundle+LocalizationChecker.h"
+#import "NSBundle+HKLocalizationChecker.h"
 #import <objc/runtime.h>
-#import "LocalizationChecker.h"
+#import "HKLocalizationChecker.h"
 
 static Method originalMethod;
 
 
-@implementation NSBundle (LocalizationChecker)
+@implementation NSBundle (HKLocalizationChecker)
 + (void) initialize {
     //Swizzle method implementations which get string from NSBundle strings file
     if (self == [NSBundle class]) {
@@ -50,7 +50,7 @@ static Method originalMethod;
     } else {
         //String localized, add to structure
         //This will be checked later on when a string is set to a UI component
-        [[LocalizationChecker sharedLocalizationChecker] addLocalizedWord:translated];
+        [[HKLocalizationChecker sharedHKLocalizationChecker] addLocalizedWord:translated];
     }
     
     return translated;

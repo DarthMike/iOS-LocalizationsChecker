@@ -1,18 +1,18 @@
 //
-//  UILabel+LocalizationChecker.m
+//  UILabel+HKLocalizationChecker.m
 //  test
 //
 //  Created by Hector Zarate / Tomasz Wyszomirski on 2/22/13.
 //
 
-#import "UILabel+LocalizationChecker.h"
-#import "LocalizationChecker.h"
+#import "UILabel+HKLocalizationChecker.h"
+#import "HKLocalizationChecker.h"
 #import <objc/runtime.h>
 #import <QuartzCore/QuartzCore.h>
 
 static const char *kIsFaultyKey = "IsFaulty";
 
-@implementation UILabel (LocalizationChecker)
+@implementation UILabel (HKLocalizationChecker)
 
 // What happens when text is called from IB ?
 
@@ -38,7 +38,7 @@ static const char *kIsFaultyKey = "IsFaulty";
 - (void)swappedSetText:(NSString *)text {
     objc_setAssociatedObject(self, kIsFaultyKey, @NO, OBJC_ASSOCIATION_RETAIN);
     
-    if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:text] == NO) {
+    if ([[HKLocalizationChecker sharedHKLocalizationChecker] isStringLocalized:text] == NO) {
         objc_setAssociatedObject(self, kIsFaultyKey, @YES, OBJC_ASSOCIATION_RETAIN);
         NSLog(@"Non-localized string \"%@\" in: %@", text, [[self class] methodNameFromStackTrace]);
         
@@ -57,7 +57,7 @@ static const char *kIsFaultyKey = "IsFaulty";
     {
         [self swappedAwakeFromNib];
         
-        if ([[LocalizationChecker sharedLocalizationChecker] isStringLocalized:self.text] == NO) {
+        if ([[HKLocalizationChecker sharedHKLocalizationChecker] isStringLocalized:self.text] == NO) {
             objc_setAssociatedObject(self, "hackaton", self.backgroundColor, OBJC_ASSOCIATION_RETAIN);
             [self setBackgroundColor:[UIColor redColor]];
         }
@@ -75,7 +75,7 @@ static const char *kIsFaultyKey = "IsFaulty";
 }
 
 - (void)setHidden:(BOOL)hidden {
-    if (![LocalizationChecker sharedLocalizationChecker].showsFaultyWhenViewHidden) {
+    if (![HKLocalizationChecker sharedHKLocalizationChecker].showsFaultyWhenViewHidden) {
         self.layer.hidden = hidden;
     }
 }
