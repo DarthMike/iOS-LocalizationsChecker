@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A91AE1116D7FBCE00FD5088 /* LocalizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A91AE1016D7FBCE00FD5088 /* LocalizationChecker.m */; };
-		3A91AE1416D7FD5F00FD5088 /* UILabel+LocalizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A91AE1316D7FD5F00FD5088 /* UILabel+LocalizationChecker.m */; };
-		3A91AE4C16D81B6F00FD5088 /* UIViewController+LocalisationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A91AE4B16D81B6F00FD5088 /* UIViewController+LocalisationChecker.m */; };
 		E7F8ED6916D7C45900DC1DE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F8ED6816D7C45800DC1DE3 /* UIKit.framework */; };
 		E7F8ED6B16D7C45900DC1DE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F8ED6A16D7C45900DC1DE3 /* Foundation.framework */; };
 		E7F8ED6D16D7C45900DC1DE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F8ED6C16D7C45900DC1DE3 /* CoreGraphics.framework */; };
@@ -21,17 +18,14 @@
 		E7F8ED7F16D7C45900DC1DE3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F8ED7E16D7C45900DC1DE3 /* Default-568h@2x.png */; };
 		E7F8ED8216D7C45900DC1DE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8ED8116D7C45900DC1DE3 /* ViewController.m */; };
 		E7F8ED8516D7C45900DC1DE3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7F8ED8316D7C45900DC1DE3 /* ViewController.xib */; };
-		E7F8ED8D16D7C86400DC1DE3 /* NSBundle+LocalizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F8ED8C16D7C86400DC1DE3 /* NSBundle+LocalizationChecker.m */; };
 		E7FA264216D7FDA40033FAE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7FA264116D7FDA40033FAE3 /* Localizable.strings */; };
+		E7FA266416D932E10033FAE3 /* LocalizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA265D16D932E10033FAE3 /* LocalizationChecker.m */; };
+		E7FA266516D932E10033FAE3 /* NSBundle+LocalizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA265F16D932E10033FAE3 /* NSBundle+LocalizationChecker.m */; };
+		E7FA266616D932E10033FAE3 /* UILabel+LocalizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA266116D932E10033FAE3 /* UILabel+LocalizationChecker.m */; };
+		E7FA266716D932E10033FAE3 /* UIViewController+LocalisationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA266316D932E10033FAE3 /* UIViewController+LocalisationChecker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A91AE0F16D7FBCE00FD5088 /* LocalizationChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationChecker.h; sourceTree = "<group>"; };
-		3A91AE1016D7FBCE00FD5088 /* LocalizationChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationChecker.m; sourceTree = "<group>"; };
-		3A91AE1216D7FD5F00FD5088 /* UILabel+LocalizationChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LocalizationChecker.h"; sourceTree = "<group>"; };
-		3A91AE1316D7FD5F00FD5088 /* UILabel+LocalizationChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LocalizationChecker.m"; sourceTree = "<group>"; };
-		3A91AE4A16D81B6F00FD5088 /* UIViewController+LocalisationChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LocalisationChecker.h"; sourceTree = "<group>"; };
-		3A91AE4B16D81B6F00FD5088 /* UIViewController+LocalisationChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LocalisationChecker.m"; sourceTree = "<group>"; };
 		E7F8ED6516D7C45800DC1DE3 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F8ED6816D7C45800DC1DE3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7F8ED6A16D7C45900DC1DE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,9 +42,15 @@
 		E7F8ED8016D7C45900DC1DE3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E7F8ED8116D7C45900DC1DE3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E7F8ED8416D7C45900DC1DE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		E7F8ED8B16D7C86400DC1DE3 /* NSBundle+LocalizationChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+LocalizationChecker.h"; sourceTree = "<group>"; };
-		E7F8ED8C16D7C86400DC1DE3 /* NSBundle+LocalizationChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+LocalizationChecker.m"; sourceTree = "<group>"; };
 		E7FA264116D7FDA40033FAE3 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		E7FA265C16D932E10033FAE3 /* LocalizationChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationChecker.h; sourceTree = "<group>"; };
+		E7FA265D16D932E10033FAE3 /* LocalizationChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationChecker.m; sourceTree = "<group>"; };
+		E7FA265E16D932E10033FAE3 /* NSBundle+LocalizationChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+LocalizationChecker.h"; sourceTree = "<group>"; };
+		E7FA265F16D932E10033FAE3 /* NSBundle+LocalizationChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+LocalizationChecker.m"; sourceTree = "<group>"; };
+		E7FA266016D932E10033FAE3 /* UILabel+LocalizationChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LocalizationChecker.h"; sourceTree = "<group>"; };
+		E7FA266116D932E10033FAE3 /* UILabel+LocalizationChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LocalizationChecker.m"; sourceTree = "<group>"; };
+		E7FA266216D932E10033FAE3 /* UIViewController+LocalisationChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LocalisationChecker.h"; sourceTree = "<group>"; };
+		E7FA266316D932E10033FAE3 /* UIViewController+LocalisationChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LocalisationChecker.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +70,7 @@
 		E7F8ED5C16D7C45800DC1DE3 = {
 			isa = PBXGroup;
 			children = (
+				E7FA265B16D932E10033FAE3 /* HKLocalizationsChecker */,
 				E7F8ED6E16D7C45900DC1DE3 /* test */,
 				E7F8ED6716D7C45800DC1DE3 /* Frameworks */,
 				E7F8ED6616D7C45800DC1DE3 /* Products */,
@@ -103,14 +104,6 @@
 				E7F8ED8116D7C45900DC1DE3 /* ViewController.m */,
 				E7F8ED8316D7C45900DC1DE3 /* ViewController.xib */,
 				E7F8ED6F16D7C45900DC1DE3 /* Supporting Files */,
-				E7F8ED8B16D7C86400DC1DE3 /* NSBundle+LocalizationChecker.h */,
-				E7F8ED8C16D7C86400DC1DE3 /* NSBundle+LocalizationChecker.m */,
-				3A91AE0F16D7FBCE00FD5088 /* LocalizationChecker.h */,
-				3A91AE1016D7FBCE00FD5088 /* LocalizationChecker.m */,
-				3A91AE1216D7FD5F00FD5088 /* UILabel+LocalizationChecker.h */,
-				3A91AE1316D7FD5F00FD5088 /* UILabel+LocalizationChecker.m */,
-				3A91AE4A16D81B6F00FD5088 /* UIViewController+LocalisationChecker.h */,
-				3A91AE4B16D81B6F00FD5088 /* UIViewController+LocalisationChecker.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -128,6 +121,22 @@
 				E7F8ED7E16D7C45900DC1DE3 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7FA265B16D932E10033FAE3 /* HKLocalizationsChecker */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA265C16D932E10033FAE3 /* LocalizationChecker.h */,
+				E7FA265D16D932E10033FAE3 /* LocalizationChecker.m */,
+				E7FA265E16D932E10033FAE3 /* NSBundle+LocalizationChecker.h */,
+				E7FA265F16D932E10033FAE3 /* NSBundle+LocalizationChecker.m */,
+				E7FA266016D932E10033FAE3 /* UILabel+LocalizationChecker.h */,
+				E7FA266116D932E10033FAE3 /* UILabel+LocalizationChecker.m */,
+				E7FA266216D932E10033FAE3 /* UIViewController+LocalisationChecker.h */,
+				E7FA266316D932E10033FAE3 /* UIViewController+LocalisationChecker.m */,
+			);
+			name = HKLocalizationsChecker;
+			path = ../HKLocalizationsChecker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,10 +209,10 @@
 				E7F8ED7516D7C45900DC1DE3 /* main.m in Sources */,
 				E7F8ED7916D7C45900DC1DE3 /* AppDelegate.m in Sources */,
 				E7F8ED8216D7C45900DC1DE3 /* ViewController.m in Sources */,
-				E7F8ED8D16D7C86400DC1DE3 /* NSBundle+LocalizationChecker.m in Sources */,
-				3A91AE1116D7FBCE00FD5088 /* LocalizationChecker.m in Sources */,
-				3A91AE1416D7FD5F00FD5088 /* UILabel+LocalizationChecker.m in Sources */,
-				3A91AE4C16D81B6F00FD5088 /* UIViewController+LocalisationChecker.m in Sources */,
+				E7FA266416D932E10033FAE3 /* LocalizationChecker.m in Sources */,
+				E7FA266516D932E10033FAE3 /* NSBundle+LocalizationChecker.m in Sources */,
+				E7FA266616D932E10033FAE3 /* UILabel+LocalizationChecker.m in Sources */,
+				E7FA266716D932E10033FAE3 /* UIViewController+LocalisationChecker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
