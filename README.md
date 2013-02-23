@@ -22,7 +22,7 @@ The library will monitor calls to load strings from NSBundle, and all text sette
 ##Result
 This is how your UI will look with the pluging working, for **ALL** the UI:
 
-![alt text](https://raw.github.com/DarthMike/iOS-LocalizationsChecker/master/sample.png")
+![](https://github.com/DarthMike/iOS-LocalizationsChecker/raw/master/sample.png")
 
 Also wher strings were not translated, a log is thrown into console.
 
