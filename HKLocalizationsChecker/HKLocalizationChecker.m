@@ -1,6 +1,5 @@
 //
 //  HKLocalizationChecker.m
-//  test
 //
 //  Created by Hector Zarate / Tomasz Wyszomirski on 2/22/13.
 //
