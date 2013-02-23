@@ -20,14 +20,14 @@ Just add the 'checker' files to your project compile phase. All else will work a
 The library will monitor calls to load strings from NSBundle, and all text setters in your UI. If there is a mismatch between them, it means string is hardcoded, or there was no translation! 
 
 ##Result
-This is how your UI will look with the pluging working, for **ALL** the UI:
+This is how your UI will look with the library in your code working, for **ALL** the UI:
 
-![](https://github.com/DarthMike/iOS-LocalizationsChecker/raw/master/sample.png")
+![](sample.png)
 
 Also wher strings were not translated, a log is thrown into console.
 
 ##Development and first implementation idea:
-This component was developed initially as a 4 hour fast hacking for [Name Collision Hackaton](www.namecollision.pl).
+This component was developed initially as a 4 hour fast hacking for [Name Collision Hackaton](http://www.namecollision.pl).
 
 Write a small component which can be added to any iOS App, allowing:
 
