@@ -15,7 +15,7 @@ When a string is not found, system replaces with default language one, or with p
 **We want to ease the pain of finding where you forgot to add your strings.**
 
 ##Usage
-1. Add the 'checker' files to your project compile phase. 
+1. Add the HKLocalizationChecker directory to your project (ensure its files are added to the target).
 1. Enjoy! It will work automatically! ;)
 
 The library will monitor calls to load strings from NSBundle, and all text setters in your UI. If there is a mismatch between them, it means string is hardcoded, or there was no translation! This is achieved through Objective-C's coolest dynamic features: categories, object introspection, method sizzling and so. Fancy, uh?
