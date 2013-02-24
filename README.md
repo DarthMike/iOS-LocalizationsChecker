@@ -9,7 +9,7 @@ When you write an iOS app, you need some things for localized strings to show in
 - A file in correct directory in bundle
 - A string matching the key in the file!
 
-This breaks. **A LOT**. When sources, UI, strings, wireframes, and requirements change, in multiplatform projects. 
+This breaks. **A LOT**. When sources, UI, strings, wireframes, and requirements change, in multi-platform projects. 
 When a string is not found, system replaces with default language one, or with programmer-supplied default.
 
 **We want to ease the pain of finding where you forgot to add your strings.**
@@ -34,7 +34,7 @@ The library will monitor calls to load strings from NSBundle, and all text sette
  
 ##Contribution:
 - Feel free to fork the repository and play with it. And don't be shy! We would love to include some neat push requests of yours!
-- If you detect any bug or nasty behaviour, raise an issue! We want to put some effort into this to be a usable tool for you.
+- If you detect any bug or nasty behavior, raise an issue! We want to put some effort into this to be a usable tool for you.
 
 ##Developers:
 
@@ -43,5 +43,8 @@ The library will monitor calls to load strings from NSBundle, and all text sette
 - Tomek Wyszomirski
 - Hector Zarate
 
-This component was first developed as a 4 hour fast hacking for the [Name Collision Hackaton](http://www.namecollision.pl). 
+This component was first developed as a 4 hour fast hacking for the [Name Collision Hackathon](http://www.namecollision.pl). 
 Original objectives and motivation [here](https://www.hackerleague.org/hackathons/name-collision/hacks/ios-localizations-checker).
+
+##License:
+iOS Localization Checker is released under the MIT License. Read the LICENSE file for more information.
