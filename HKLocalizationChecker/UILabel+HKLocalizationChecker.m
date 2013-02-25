@@ -9,19 +9,21 @@
 #import <objc/runtime.h>
 #import <QuartzCore/QuartzCore.h>
 
-static const char *kIsFaultyKey = "IsFaulty";
+#define NONLOCALIZED_VIEW_BACKGROUND_COLOR [UIColor redColor]
 
 @implementation UILabel (HKLocalizationChecker)
 
 // What happens when text is called from IB ?
 
-+ (void) initialize {
++ (void)initialize
+{
     if (self == [UILabel class]) {
         [self setup];
     }
 }
 
-+ (void)setup {
++ (void)setup
+{
     // swizzle setText
     Method originalMethod = class_getInstanceMethod(self, @selector(setText:));
     
@@ -34,16 +36,17 @@ static const char *kIsFaultyKey = "IsFaulty";
     method_exchangeImplementations(originalSetValueMethod, mineSetValueMethod);
 }
 
-- (void)swappedSetText:(NSString *)text {
+- (void)swappedSetText:(NSString *)text
+{
     objc_setAssociatedObject(self, kIsFaultyKey, @NO, OBJC_ASSOCIATION_RETAIN);
     
     if ([[HKLocalizationChecker sharedHKLocalizationChecker] isStringLocalized:text] == NO) {
         objc_setAssociatedObject(self, kIsFaultyKey, @YES, OBJC_ASSOCIATION_RETAIN);
-        NSLog(@"Non-localized string \"%@\" in: %@", text, [[self class] methodNameFromStackTrace]);
+        NSLog(@"Non-localized string \"%@\" in: %@", text, MethodNameFromCurrentStackTrace());
         
-        [self setBackgroundColorImpl:[UIColor redColor]];
+        [self setBackgroundColorImpl:NONLOCALIZED_VIEW_BACKGROUND_COLOR];
     } else {
-        id oldColor = objc_getAssociatedObject(self, "hackaton");
+        id oldColor = objc_getAssociatedObject(self, kOldColorKey);
         [self setBackgroundColor:oldColor];
     }
     
@@ -52,49 +55,34 @@ static const char *kIsFaultyKey = "IsFaulty";
 
 - (void)swappedAwakeFromNib
 {
-    if ([self isKindOfClass:[UILabel class]])
-    {
+    if ([self isKindOfClass:[UILabel class]]) {
         [self swappedAwakeFromNib];
         
         if ([[HKLocalizationChecker sharedHKLocalizationChecker] isStringLocalized:self.text] == NO) {
-            objc_setAssociatedObject(self, "hackaton", self.backgroundColor, OBJC_ASSOCIATION_RETAIN);
-            [self setBackgroundColor:[UIColor redColor]];
+            objc_setAssociatedObject(self, kOldColorKey, self.backgroundColor, OBJC_ASSOCIATION_RETAIN);
+            [self setBackgroundColor:NONLOCALIZED_VIEW_BACKGROUND_COLOR];
         }
     }
 }
-- (void)setBackgroundColor:(UIColor *)backgroundColor {
-    
-    id r =  objc_getAssociatedObject(self, kIsFaultyKey);
-    BOOL isFaulty = [r boolValue];
-    if (isFaulty) {
-        //do some logging?
-    } else {
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    BOOL isFaulty = [objc_getAssociatedObject(self, kIsFaultyKey) boolValue];
+    if (!isFaulty) {
         [self setBackgroundColorImpl:backgroundColor];
     }
 }
 
-- (void)setHidden:(BOOL)hidden {
+- (void)setHidden:(BOOL)hidden
+{
     if (![HKLocalizationChecker sharedHKLocalizationChecker].showsFaultyWhenViewHidden) {
         self.layer.hidden = hidden;
     }
 }
 
-- (void)setBackgroundColorImpl:(UIColor *)backgroundColor {
+- (void)setBackgroundColorImpl:(UIColor *)backgroundColor
+{
     self.layer.backgroundColor = backgroundColor.CGColor;
-}
-
-+ (NSString *)methodNameFromStackTrace {
-    NSArray *stackTrace = [NSThread callStackSymbols];
-    if (stackTrace.count <= 2) {
-        return nil;
-    }
-    NSString *stackLine = stackTrace[2];
-    stackLine = [stackLine stringByReplacingOccurrencesOfString:@" +" withString:@" "
-                                                        options:NSRegularExpressionSearch
-                                                          range:NSMakeRange(0, stackLine.length)];
-    NSArray *stackComponents = [stackLine componentsSeparatedByString:@" "];
-    stackComponents = [stackComponents subarrayWithRange:NSMakeRange(3, 2)];
-    return [stackComponents componentsJoinedByString:@" "];
 }
 
 @end

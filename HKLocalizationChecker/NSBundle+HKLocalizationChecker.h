@@ -6,6 +6,8 @@
 
 #import <Foundation/Foundation.h>
 
-/// HKLocalizationChecker plays around with NSBundle API to know if a string requested by app is localized.
+/**
+ HKLocalizationChecker plays around with NSBundle API to know if a string requested by app is localized.
+ */
 @interface NSBundle (HKLocalizationChecker)
 @end

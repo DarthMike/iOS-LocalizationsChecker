@@ -10,13 +10,15 @@
 
 @implementation UIViewController (HKLocalizationChecker)
 
-+ (void) initialize {
++ (void)initialize
+{
     if (self == [UIViewController class]) {
         [self setup];
     }
 }
 
-+ (void)setup {
++ (void)setup
+{
     // swizzle setTitle
     Method originalMethod = class_getInstanceMethod(self, @selector(setTitle:));
     
@@ -24,30 +26,17 @@
     method_exchangeImplementations(originalMethod, mine);
 }
 
-- (void)swappedSetTitle:(NSString *)title {
+- (void)swappedSetTitle:(NSString *)title
+{
     if ([[HKLocalizationChecker sharedHKLocalizationChecker] isStringLocalized:title] == NO) {
-        objc_setAssociatedObject(self, "hackaton", self.navigationController.navigationBar, OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject(self, kOldColorKey, self.navigationController.navigationBar, OBJC_ASSOCIATION_RETAIN);
         self.navigationController.navigationBar.tintColor = [UIColor redColor];
-        NSLog(@"Non-localized string \"%@\" in: %@", title, [[self class] methodNameFromStackTrace]);
+        NSLog(@"Non-localized string \"%@\" in: %@", title, MethodNameFromCurrentStackTrace());
     } else {
-        self.navigationController.navigationBar.tintColor = objc_getAssociatedObject(self, "hackaton");
+        self.navigationController.navigationBar.tintColor = objc_getAssociatedObject(self, kOldColorKey);
     }
     
     [self swappedSetTitle:title];
-}
-
-+ (NSString *)methodNameFromStackTrace {
-    NSArray *stackTrace = [NSThread callStackSymbols];
-    if (stackTrace.count <= 2) {
-        return nil;
-    }
-    NSString *stackLine = stackTrace[2];
-    stackLine = [stackLine stringByReplacingOccurrencesOfString:@" +" withString:@" "
-                                                        options:NSRegularExpressionSearch
-                                                          range:NSMakeRange(0, stackLine.length)];
-    NSArray *stackComponents = [stackLine componentsSeparatedByString:@" "];
-    stackComponents = [stackComponents subarrayWithRange:NSMakeRange(3, 2)];
-    return [stackComponents componentsJoinedByString:@" "];
 }
 
 @end

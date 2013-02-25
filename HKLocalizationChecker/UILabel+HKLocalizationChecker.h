@@ -6,7 +6,9 @@
 
 #import <UIKit/UIKit.h>
 
-/// HKLocalizationChecker extends and plays around with standard UILabel to intercept setting it's text string value.
+/**
+ HKLocalizationChecker extends and plays around with standard UILabel to intercept setting it's text string value.
+ */
 @interface UILabel (HKLocalizationChecker)
 
 @end

@@ -10,9 +10,10 @@
 
 static Method originalMethod;
 
-
 @implementation NSBundle (HKLocalizationChecker)
-+ (void) initialize {
+
++ (void)initialize
+{
     //Swizzle method implementations which get string from NSBundle strings file
     if (self == [NSBundle class]) {
         originalMethod = class_getInstanceMethod(self, @selector(localizedStringForKey:value:table:));
@@ -21,9 +22,10 @@ static Method originalMethod;
     }
 }
 
-- (NSString *)swappedLocalizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)tableName {
+- (NSString *)swappedLocalizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)tableName
+{
     //Get the original (from file or not) translated string
-    NSString* translated = [self swappedLocalizedStringForKey:key value:value table:tableName];
+    NSString *translated = [self swappedLocalizedStringForKey:key value:value table:tableName];
     
     //Apple docs state:
     //A localized version of the string designated by key in table tableName.
