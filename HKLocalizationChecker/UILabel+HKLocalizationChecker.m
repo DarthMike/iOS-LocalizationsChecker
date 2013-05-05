@@ -41,10 +41,20 @@
     objc_setAssociatedObject(self, kIsFaultyKey, @NO, OBJC_ASSOCIATION_RETAIN);
     
     if ([[HKLocalizationChecker sharedHKLocalizationChecker] isStringLocalized:text] == NO) {
-        objc_setAssociatedObject(self, kIsFaultyKey, @YES, OBJC_ASSOCIATION_RETAIN);
-        NSLog(@"Non-localized string \"%@\" in: %@", text, MethodNameFromCurrentStackTrace());
+        // Check for 'secure' labels. On UITextFields, internally apple's implementation swaps the
+        // actual characters for a set of unicode 'black dots'. If our label is all 'black dots', we are dealing
+        // with a secure UITextField, which shouldn't be treated as faulty.
+        NSMutableString* secure = [NSMutableString stringWithCapacity:text.length];
+        for (int i = 0; i < text.length; ++i) {
+            [secure appendString:@"\u25CF"];  //The ●
+        }
         
-        [self setBackgroundColorImpl:NONLOCALIZED_VIEW_BACKGROUND_COLOR];
+        if (![secure isEqualToString:text]) {
+            objc_setAssociatedObject(self, kIsFaultyKey, @YES, OBJC_ASSOCIATION_RETAIN);
+            NSLog(@"Non-localized string \"%@\" in: %@", text, MethodNameFromCurrentStackTrace());
+            
+            [self setBackgroundColorImpl:NONLOCALIZED_VIEW_BACKGROUND_COLOR];
+        }
     } else {
         id oldColor = objc_getAssociatedObject(self, kOldColorKey);
         [self setBackgroundColor:oldColor];
