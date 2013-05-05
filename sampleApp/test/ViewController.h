@@ -14,5 +14,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *noBgLabel;
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet UIButton *button2;
-
+@property (weak, nonatomic) IBOutlet UITextField* field1;
+@property (weak, nonatomic) IBOutlet UITextField* field2;
+@property (weak, nonatomic) IBOutlet UITextField* field3;
+@property (weak, nonatomic) IBOutlet UITextField* field4;
+@property (weak, nonatomic) IBOutlet UITextField* field5;
 @end

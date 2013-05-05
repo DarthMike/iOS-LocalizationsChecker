@@ -31,6 +31,14 @@
     [self.button2 setTitle:@"hardcoded" forState:UIControlStateNormal];
     [self.button2 setTitle:NSLocalizedString(@"key3", @"") forState:UIControlStateSelected];
     
+    self.field1.text = @"hardcode";
+    self.field2.text = NSLocalizedString(@"key4", @"");
+    
+    self.field3.placeholder = @"phhardcoded";
+    self.field4.placeholder = NSLocalizedString(@"key5", @"");
+    
+    self.field5.text = @"secure";
+    
     self.title = @"NotTranslated";
 }
 
